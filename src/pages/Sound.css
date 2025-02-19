@@ -1,0 +1,272 @@
+.sound-page {
+    position: relative;
+    z-index: 1;
+    background: none;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .sound-page h1 {
+    color: var(--softblack);
+    font-size: 5rem;
+    max-width: 60%;
+    font-family: var(--bowlby);
+    font-weight: 400;
+    margin-bottom: 1rem;
+    text-align: center;
+    line-height: 1.3;
+  }
+  
+  .sound-page p {
+    color: var(--white);
+    font-family: var(--fira);
+    font-size: 1rem;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+/* Wrapper for search input and clear button */
+.search-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 50%;
+}
+
+/* Style for the input field */
+.search-input-wrapper input {
+  width: 100%;
+  padding: 0.5rem 2.5rem 0.5rem 1rem; /* Adjust padding to make space for X button */
+  font-size: 1rem;
+  border: 2px solid var(--softblack);
+  border-radius: 25px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+/* Focus effect */
+.search-input-wrapper input:focus {
+  border-color: #322f61;
+}
+
+/* Clear "X" button styling */
+.clear-btn {
+  position: absolute;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 1rem;
+  color: var(--softblack);
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.clear-btn:hover {
+  color: var(--softblack);
+}
+
+  
+  .sound-results {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 5rem; 
+    justify-items: center;
+    padding: 1rem; 
+}
+  
+  .sound-item {
+    background-color: var(--darkgreen);
+    color: var(--softblack);
+    padding: 1rem;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease;
+  }
+  
+  .sound-item:hover {
+    transform: scale(1.1);
+  }
+  
+  .sound-item audio {
+    margin-top: 1rem;
+    border-radius: 5px;
+  }
+  
+  .error-message {
+
+    font-family: var(--fira);
+    font-size: 1rem;
+  }
+  
+
+  /* Style for the search button */
+.search-btn {
+    background-color: var(--white);
+    color: var(--softblack);
+    border: none;                
+    padding: 10px 20px;         
+    font-size: 16px;            
+    cursor: pointer;            
+    border-radius: 25px;          
+    transition: background-color 0.3s ease;  
+    font-family: var(--fira); 
+    font-size: 0.8rem; 
+  }
+  
+
+  .search-btn:hover {
+    background-color: var(--darkgreen);  /* Darker green on hover */
+  }
+  
+  .search-btn:disabled {
+    background-color: #ccc; 
+    cursor: not-allowed;
+  }
+
+.continue-btn-wrapper {
+    margin-top: 5rem;
+  }
+  
+  .continue-btn {
+    background-color: var(--white);
+    color: var(--softblack);
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: background-color 0.3s ease;
+    font-family: var(--fira);
+  }
+  
+  .continue-btn:hover {
+    background-color: var(--darkgreen);
+  }
+
+  /* Spinner */
+.spinner {
+  width: 30px;
+  height: 30px;
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-top: 4px solid var(--darkgreen);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 1rem auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+/* **RESPONSIVE MEDIA QUERIES** */
+
+/* 16-inch Screens (Smaller Laptops) */
+@media screen and (max-width: 1728px) {
+  .sound-results {
+      grid-template-columns: repeat(3, 1fr);
+  }
+
+  .sound-page h1 {
+      font-size: 3.5rem;
+  }
+
+  .search-input-wrapper {
+      width: 60%;
+  }
+}
+
+/* 13-inch Screens (MacBooks, Laptops) */
+@media screen and (max-width: 1440px) {
+  .sound-results {
+      grid-template-columns: repeat(3, 1fr);
+  }
+
+  .sound-page h1 {
+      font-size: 3rem;
+      max-width: 80%;
+  }
+
+  .search-input-wrapper {
+      width: 70%;
+  }
+
+  .search-btn {
+      font-size: 0.75rem;
+      padding: 8px 16px;
+  }
+}
+
+/* Mobile (Tablets & Regular Smartphones) */
+@media screen and (max-width: 1024px) {
+  .sound-results {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+  }
+
+  .sound-page h1 {
+      font-size: 2.5rem;
+      max-width: 90%;
+  }
+
+  .search-input-wrapper {
+      width: 80%;
+  }
+
+  .continue-btn {
+      font-size: 14px;
+      padding: 8px 16px;
+  }
+}
+
+/* Mobile (Small Smartphones) */
+@media screen and (max-width: 768px) {
+  .sound-results {
+      grid-template-columns: repeat(1, 1fr);
+  }
+
+  .sound-page h1 {
+      font-size: 2rem;
+      max-width: 95%;
+  }
+
+  .search-input-wrapper {
+      width: 90%;
+  }
+
+  .search-btn {
+      font-size: 0.7rem;
+      padding: 6px 12px;
+  }
+
+  .continue-btn {
+      font-size: 12px;
+      padding: 6px 12px;
+  }
+}
+
+/*  Ultra Small Phones */
+@media screen and (max-width: 480px) {
+  .sound-results {
+      grid-template-columns: repeat(1, 1fr);
+      gap: 1rem;
+  }
+
+  .search-input-wrapper {
+      width: 100%;
+  }
+
+  .search-btn {
+      font-size: 0.65rem;
+      padding: 5px 10px;
+  }
+
+  .continue-btn {
+      font-size: 12px;
+      padding: 6px 10px;
+  }
+}

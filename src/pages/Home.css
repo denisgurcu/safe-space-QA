@@ -1,0 +1,129 @@
+/* Container for the entire landing page */
+.landing-page {
+  position: relative;
+  min-height: 100vh;
+  background: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Pushes content to top and bottom */
+  align-items: center;
+  padding-bottom: 5rem; /* Space before the next section */
+}
+
+/* INTRO SECTION - NEW */
+.intro-section {
+  text-align: center;
+  max-width: 800px;
+  margin-top: 5rem;
+}
+
+.intro-section h1 {
+  font-size: 1.5rem;
+  font-family: var(--bowlby);
+  color: var(--darkblack);
+}
+
+/* Container for the flip cards */
+.flip-card-container {
+  display: flex;
+  gap: 10rem; /* Space between cards */
+  justify-content: center; /* Horizontally center the cards within the container */
+  align-items: center; /* Vertically align items in a default manner */
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* Remove link underline */
+.exercise-card-link {
+  text-decoration: none; /* Remove underline from all links within the cards */
+}
+
+/* SAFE SPACE Title - Naturally placed at the bottom of first section */
+.safe-space-title {
+  font-family: var(--notable);
+  font-size: 15rem;
+  color: var(--darkred);
+  text-align: center;
+  margin-top: auto; /* Pushes it to the bottom of the first section */
+}
+
+/* Page description - Ensures it appears after scrolling past "SAFE SPACE" */
+.page-description {
+  margin-top: 5rem; /* Adds space before the description */
+  width: 100%;
+  padding: 20px;
+  text-align: left;
+  font-size: 2.5rem;
+  color: var(--darkblack);
+  max-width: 60%;
+  font-family: var(--fira)
+}
+
+/* ============================ */
+/* RESPONSIVE MEDIA QUERIES */
+/* ============================ */
+
+/* 16-inch screens (1920px width) */
+@media screen and (max-width: 1920px) {
+  .flip-card-container {
+    gap: 6rem; /* Reduce gap */
+  }
+
+  .safe-space-title {
+    font-size: 12rem; /* Slightly smaller */
+  }
+
+  .page-description {
+    font-size: 2rem;
+    max-width: 70%;
+  }
+}
+
+/* 13-inch screens (1440px width) */
+@media screen and (max-width: 1440px) {
+
+  .safe-space-title {
+    font-size: 10rem;
+  }
+
+  .intro-section h1 {
+    font-size: 1.3rem;
+  }
+
+  .page-description {
+    font-size: 1.8rem;
+    max-width: 80%;
+  }
+}
+
+/* Regular Phone Screens (max-width 768px) */
+@media screen and (max-width: 768px) {
+  .landing-page {
+    padding-bottom: 2rem; /* Less bottom padding */
+  }
+
+  .intro-section {
+    max-width: 90%;
+    margin-top: 3rem;
+  }
+
+  .intro-section h1 {
+    font-size: 1.2rem;
+  }
+
+  .flip-card-container {
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .safe-space-title {
+    font-size: 6rem; /* Much smaller for mobile */
+  }
+
+  .page-description {
+    font-size: 1.5rem;
+    max-width: 90%;
+    text-align: center; /* Center text */
+  }
+}

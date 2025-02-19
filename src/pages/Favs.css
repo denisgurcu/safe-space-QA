@@ -1,0 +1,74 @@
+.favorites-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+}
+
+/* Title Styling */
+.favorites-page h1 {
+  color: var(--softblack);
+  font-size: 5rem;
+  max-width: 60%;
+  font-family: var(--bowlby);
+  font-weight: 400;
+  margin-bottom: 1rem;
+  text-align: center;
+  line-height: 1.3;
+}
+
+/* Category Toggle Buttons */
+.fav-category-toggle {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.fav-toggle-btn {
+  background-color: var(--darkgreen);
+  color: var(--softblack);
+  font-family: var(--fira);
+  font-size: 1rem;
+  padding: 0.5rem 1.5rem;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.fav-toggle-btn:hover {
+  background-color: var(--darkred);
+  color: var(--white);
+}
+
+.fav-toggle-btn.active {
+  background-color: var(--darkred);
+  color: var(--white);
+  transform: scale(1.05);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Favorites Grid */
+.favorites-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);  /* Adjust number of columns */
+  gap: 1.5rem;
+  justify-items: center;
+  max-width: 1200px;
+  width: 100%;
+}
+
+
+.no-favorites-message {
+  text-align: center;
+  font-size: 1.5rem;
+  font-family: var(--fira);
+  color: var(--softblack);
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+
